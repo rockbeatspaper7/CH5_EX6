@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
     int mode = 1;
     // "mode" is how the code will tell if the code what it'll do dependent on the button clicked
+    // 1 is CD button, 2 is Loans, 3 is checkings
 
     protected void initCDButton () {
         RadioButton cdButton = findViewById(R.id.cdRadioB);
