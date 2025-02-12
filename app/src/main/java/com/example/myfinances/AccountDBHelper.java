@@ -51,7 +51,7 @@ public class AccountDBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS CD_Account");
         db.execSQL("DROP TABLE IF EXISTS LOANS_Account");
         db.execSQL("DROP TABLE IF EXISTS CHECKINGS_Account");
-        onCreate(db);  // Recreate the table
+        onCreate(db);
     }
 }
 

@@ -44,13 +44,14 @@ public class AccountDataSource {
     public boolean updateCDAccount(Accounts account) {
         boolean didSucceed = false;
         try {
+            Long rowId = account.getId();
             ContentValues values = new ContentValues();
             values.put("accNumber", account.getAccNumber());
             values.put("initialBalance", account.getInitialBalance());
             values.put("currentBalance", account.getCurrentBalance());
             values.put("interestRate", account.getInterestRate());
 
-            int rowsUpdated = database.update("CD_Account", values, "id = ?", new String[]{String.valueOf(account.getId())});
+            int rowsUpdated = database.update("CD_Account", values, "id =" + rowId, null);
 
             didSucceed = (rowsUpdated > 0);
         } catch (Exception e) {
@@ -82,6 +83,7 @@ public class AccountDataSource {
     public boolean updateLoanAccount(Accounts account) {
         boolean didSucceed = false;
         try {
+            long rowId = account.getId();
             ContentValues values = new ContentValues();
             values.put("accNumber", account.getAccNumber());
             values.put("initialBalance", account.getInitialBalance());
@@ -89,7 +91,7 @@ public class AccountDataSource {
             values.put("paymentAmount", account.getPaymentAmount());
             values.put("interestRate", account.getInterestRate());
 
-            int rowsUpdated = database.update("LOANS_Account", values, "id = ?", new String[]{String.valueOf(account.getId())});
+            int rowsUpdated = database.update("LOANS_Account", values, "id =" + rowId, null);
 
             didSucceed = (rowsUpdated > 0);
         } catch (Exception e) {
@@ -117,11 +119,12 @@ public class AccountDataSource {
     public boolean updateCheckingAccount(Accounts account) {
         boolean didSucceed = false;
         try {
+            long rowId = account.getId();
             ContentValues values = new ContentValues();
             values.put("accNumber", account.getAccNumber());
             values.put("currentBalance", account.getCurrentBalance());
 
-            int rowsUpdated = database.update("CHECKINGS_Account", values, "id = ?", new String[]{String.valueOf(account.getId())});
+            int rowsUpdated = database.update("CHECKINGS_Account", values, "id =" + rowId, null);
 
             didSucceed = (rowsUpdated > 0);
         } catch (Exception e) {
