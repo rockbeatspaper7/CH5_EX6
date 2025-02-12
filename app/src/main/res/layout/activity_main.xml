@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.214" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/accNumEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -76,7 +76,7 @@
         app:layout_constraintVertical_bias="0.25" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/inBalanceEdit"
         android:layout_width="156dp"
         android:layout_height="46dp"
         android:ems="10"
@@ -90,7 +90,7 @@
         app:layout_constraintVertical_bias="0.36" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/curBalanceEdit"
         android:layout_width="182dp"
         android:layout_height="45dp"
         android:ems="10"
@@ -104,7 +104,7 @@
         app:layout_constraintVertical_bias="0.361" />
 
     <EditText
-        android:id="@+id/editTextText4"
+        android:id="@+id/payAmEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -118,7 +118,7 @@
         app:layout_constraintVertical_bias="0.476" />
 
     <EditText
-        android:id="@+id/editTextText5"
+        android:id="@+id/irEdit"
         android:layout_width="138dp"
         android:layout_height="45dp"
         android:ems="10"
