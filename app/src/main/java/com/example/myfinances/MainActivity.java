@@ -212,6 +212,9 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 Log.e("MainActivity", "Database operation failed", e);
             }
+            finally {
+                ds.close();
+            }
 
             if (!wasSuccessful) {
                 Log.e("MainActivity", "Save operation was unsuccessful");
