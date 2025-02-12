@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        account = new Accounts();
 
         editAccNum = findViewById(R.id.accNumEdit);
         editInitialBal = findViewById(R.id.inBalanceEdit);
@@ -129,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
                 ds.open();
                 switch (mode) {
                     case 1:
+                        account = new Accounts();
                         account.setAccNumber(editAccNum.getText().toString());
                         account.setInitialBalance(Double.parseDouble(editInitialBal.getText().toString()));
                         account.setCurrentBalance(Double.parseDouble(editCurrentBal.getText().toString()));
@@ -140,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
                                 int newId = ds.getLastID("CD_Account");
                                 account.setId(newId);
                                 Log.d("MainActivity", "Account inserted successfully with ID: " + newId);
+                                ds.close();
                             } else {
                                 Log.e("MainActivity", "Failed to insert account");
                             }
@@ -153,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case 2:
+                        account = new Accounts();
                         account.setAccNumber(editAccNum.getText().toString());
                         account.setInitialBalance(Double.parseDouble(editInitialBal.getText().toString()));
                         account.setCurrentBalance(Double.parseDouble(editCurrentBal.getText().toString()));
@@ -167,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
                                 int newId = ds.getLastID("LOANS_Account");
                                 account.setId(newId);
                                 Log.d("MainActivity", "Account inserted successfully with ID: " + newId);
+                                ds.close();
                             } else {
                                 Log.e("MainActivity", "Failed to insert account");
                             }
@@ -181,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 3:
+                        account = new Accounts();
                         account.setAccNumber(editAccNum.getText().toString());
                         account.setCurrentBalance(Double.parseDouble(editCurrentBal.getText().toString()));
 
@@ -190,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
                                 int newId = ds.getLastID("CHECKINGS_Account");
                                 account.setId(newId);
                                 Log.d("MainActivity", "Account inserted successfully with ID: " + newId);
+                                ds.close();
                             } else {
                                 Log.e("MainActivity", "Failed to insert account");
                             }
