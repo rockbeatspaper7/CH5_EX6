@@ -161,6 +161,8 @@ public class MainActivity extends AppCompatActivity {
 
                         if (account.getId() == -1) {
                             wasSuccessful = ds.insertLoanAccount(account);
+                            Log.d("MainActivity", "Account started successfully");
+
                             if (wasSuccessful) {
                                 int newId = ds.getLastID("LOANS_Account");
                                 account.setId(newId);
